@@ -1,0 +1,58 @@
+{
+  "tested_at": "2026-11-14",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "nbtlib": "2.0.4",
+    "device": "cpu",
+    "threads": 2
+  },
+  "inference_entry_sha256": "13689f3bee7fc3a109e47e6b6d7a9128e913772994fc83ffde316778fa62f831",
+  "selected_steps": {
+    "global": 98000,
+    "local": 100000
+  },
+  "integration_test": {
+    "seed": 1001,
+    "steps": 2,
+    "batch": 1,
+    "shape": [
+      9,
+      64,
+      64
+    ],
+    "both_actual_EMA_models_strictly_loaded": true,
+    "global_and_local_DDIM_executed": true,
+    "height_and_hydro_projection_executed": true,
+    "schematic_export_and_independent_column_readback_passed": true,
+    "column_audit": {
+      "columns": 4096,
+      "water_columns": 592,
+      "float_field_water_columns": 592,
+      "float_water_columns_excluded_by_rounded_policy": 362,
+      "exported_water_columns_lost_vs_float": 0,
+      "exported_water_columns_added_vs_float": 0,
+      "wet_policy": "float",
+      "top_material_mismatches": 0,
+      "water_surface_mismatches": 0,
+      "water_bottom_mismatches": 0,
+      "stone_layer_mismatches": 0,
+      "field_sha256": "54499a4b25a073ecdf8b0d7aa2ee947f244d53bd7ceb42d60ef81cda60e4c4d4",
+      "schematic_sha256": "c9d86177189820b447ffeca83e293ca7b5af473037a977e8d3ca93b932498504",
+      "note": "Checks every column at specified layers, not all interior blocks or in-game appearance."
+    },
+    "elapsed_seconds_excluding_imports": 3.4370617866516113,
+    "process_peak_RSS_KiB": 982520,
+    "smoke_only_not_quality_sample": true
+  },
+  "scope": {
+    "fresh_full512_CPU_generation_tested": false,
+    "fresh_game_test_performed": false,
+    "CUDA_runtime_tested": false,
+    "quantization_tested": false,
+    "full_generation_2GB_memory_validated": false,
+    "historical_full_region_game_evidence": "provenance/ORIGINAL_DELIVERY.json"
+  }
+}

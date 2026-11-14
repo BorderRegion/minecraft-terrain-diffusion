@@ -1,0 +1,98 @@
+{
+  "training_sources": [
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342687178.npz",
+      "sha256": "75537f8151c4f05afbf935bce60ddc3b70e099b7097776d4d4f60f032578249f",
+      "water_columns": 378367
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342695097.npz",
+      "sha256": "aa7e99fbfb3245bc1acbf4dc96d19ae65deebd0e2c2bcaf026b6d4f1e9abaa97",
+      "water_columns": 905446
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342410013.npz",
+      "sha256": "35cf49b548c6cda9d91e92e94fc2c4e9eb4f5852b1614ad08bac711b691bdad2",
+      "water_columns": 159468
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342164524.npz",
+      "sha256": "755641dbc9eae146fa2f39ce16cd269abc1ca57d9884ad58bea4e3d31588ecd2",
+      "water_columns": 954121
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342845558.npz",
+      "sha256": "3f35d3af47b0cbc0768b002950d0af3e0f441dfa67897a0bb4804debae154dbb",
+      "water_columns": 5003
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342900991.npz",
+      "sha256": "60f976677568706f234817f7bec7fd05d253cb3d83965db68d2c0c95829f913c",
+      "water_columns": 809958
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872343661215.npz",
+      "sha256": "76102e3f2029a4c7ec39bbaabc7575098e4e1ea7a3a66e96839b56ab7d80c6b9",
+      "water_columns": 643239
+    },
+    {
+      "source": "/root/autodl-tmp/minecraft-terrain/natural_dataset/872342726773.npz",
+      "sha256": "0ecdd32825324ea37f86a704b625ce51685bf0e076a72e64b955b976dbda9e42",
+      "water_columns": 117822
+    }
+  ],
+  "water_columns": 3973424,
+  "modal_water_top_block_y": 62,
+  "modal_fraction": 0.9991830723325776,
+  "top_levels": [
+    [
+      62,
+      3970178
+    ],
+    [
+      55,
+      1414
+    ],
+    [
+      59,
+      632
+    ],
+    [
+      56,
+      304
+    ],
+    [
+      61,
+      287
+    ],
+    [
+      60,
+      266
+    ],
+    [
+      58,
+      53
+    ],
+    [
+      87,
+      21
+    ],
+    [
+      19,
+      19
+    ],
+    [
+      57,
+      15
+    ],
+    [
+      171,
+      15
+    ],
+    [
+      63,
+      12
+    ]
+  ],
+  "note": "Prior estimated only from eight training seeds, not held-out data; coordinate is top water block Y, not the first-air or configured sea-level coordinate."
+}

@@ -1,4 +1,4 @@
-"""Verify archived release source and screenshots without importing PyTorch."""
+"""Validate source provenance, screenshots and syntax without importing PyTorch."""
 import ast
 import hashlib
 import json
@@ -7,24 +7,26 @@ from pathlib import Path
 
 def main():
     root = Path(__file__).resolve().parents[1]
-    source = json.loads((root / 'provenance/SOURCE_FILES.json').read_text())['files']
-    full = json.loads((root / 'provenance/MANIFEST.json').read_text())['files']
-    images = [r for r in full if r['path'].startswith('evidence/') and r['path'].endswith('.png')]
-    for row in source + images:
-        path = (root / row['path']).resolve()
-        if not path.is_relative_to(root):
-            raise ValueError('Path escapes repository')
-        data = path.read_bytes()
+    runtime = json.loads((root / 'provenance/ORIGINAL_RUNTIME_MANIFEST.json').read_text())
+    optional = {'sample.py', 'sample_global_depth_encoding.py', 'sample_conditioned_global.py'}
+    for row in runtime['files']:
+        data = (root / 'source' / row['name']).read_bytes()
+        if row['name'] in optional:
+            data = data.replace(b'try:\n    import torch_musa\nexcept ImportError:\n    torch_musa = None\n', b'import torch_musa\n')
         if len(data) != row['bytes'] or hashlib.sha256(data).hexdigest() != row['sha256']:
-            raise ValueError('Integrity mismatch: ' + row['path'])
-    files = list(root.rglob('*.py'))
+            raise ValueError('Source differs beyond declared optional MUSA import: ' + row['name'])
+    delivery = json.loads((root / 'provenance/ORIGINAL_DELIVERY.json').read_text())
+    images = delivery['formal_screenshots'] + delivery['additional_focus_screenshots']
+    for row in images:
+        if hashlib.sha256((root / 'evidence' / row['file']).read_bytes()).hexdigest() != row['sha256']:
+            raise ValueError('Screenshot integrity mismatch')
+    files = [root / 'infer.py'] + list((root / 'source').glob('*.py')) + list((root / 'tools').glob('*.py'))
     for path in files:
         ast.parse(path.read_text(), filename=str(path))
-    print(json.dumps({'verified_original_source_files': len(source),
-                      'verified_original_screenshots': len(images),
-                      'python_syntax_checked': len(files),
-                      'model_weights_included': False,
-                      'generation_tested_by_this_check': False}, indent=2))
+    print(json.dumps({'verified_runtime_files': len(runtime['files']),
+                      'optional_musa_import_changes_only': True,
+                      'verified_actual_game_screenshots': len(images),
+                      'python_syntax_checked': len(files)}, indent=2))
 
 
 if __name__ == '__main__':

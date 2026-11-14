@@ -1,0 +1,106 @@
+{
+  "format": "terrain-inference-runtime-v2",
+  "directory": "runtime-20261102T044444Z",
+  "created_at_utc": "2026-11-02T04:44:44.487148+00:00",
+  "versions": {
+    "python": "3.10.12",
+    "torch": "2.11.0.post1",
+    "torch_musa": "2.11.0.post1+b431668",
+    "numpy": "1.25.0",
+    "scipy": "1.15.3",
+    "nbtlib": "2.0.4"
+  },
+  "files": [
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/train.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/train.py",
+      "name": "train.py",
+      "bytes": 10967,
+      "sha256": "c2cc1eb7de065693b521bd65ac2d7dda2201ea3781aec4fed18e4fa234c45e33"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/conditioned_terrain.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/conditioned_terrain.py",
+      "name": "conditioned_terrain.py",
+      "bytes": 2904,
+      "sha256": "0c401cf57f59c3756231fa506a4ee28d546700e83659af584c8cbf2243a866e5"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/terrain_overlap.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/terrain_overlap.py",
+      "name": "terrain_overlap.py",
+      "bytes": 1585,
+      "sha256": "b2063a2ea60e95e8fb0d8e164bfc79419975987c016a0a0119f99cc8f9cb1a23"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/sample_global_depth_encoding.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/sample_global_depth_encoding.py",
+      "name": "sample_global_depth_encoding.py",
+      "bytes": 4850,
+      "sha256": "2c53b1ec2a12db40ab833cb9316fce1e74ab945310292f5afcac951f973ed7d1"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/sample_conditioned_global.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/sample_conditioned_global.py",
+      "name": "sample_conditioned_global.py",
+      "bytes": 5576,
+      "sha256": "25158f9171c572be9c08f2dc5df0eaeec153f48a399957f4eae165fb0725c4a2"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/sample.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/sample.py",
+      "name": "sample.py",
+      "bytes": 5806,
+      "sha256": "091296a2ac47316877baef347ff016da82ae305e8849f5c37f3358fcbbec6412"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/project_global_water.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/project_global_water.py",
+      "name": "project_global_water.py",
+      "bytes": 7308,
+      "sha256": "814fff3cbe21b5ed7516c8dcf0524dc7c82076fbedf77a915d59a325263daec7"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/verify_schematic_columns.py",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/verify_schematic_columns.py",
+      "name": "verify_schematic_columns.py",
+      "bytes": 4152,
+      "sha256": "af75f8d42ad78af5128ed80f0468aa8e8c41e618dbfad0fe8c9eabba47c695b3"
+    },
+    {
+      "remote": "/root/autodl-tmp/minecraft-terrain/reports/inference-runtime-backups/runtime-20261102T044444Z/training-water-level-prior.json",
+      "original_source": "/root/autodl-tmp/minecraft-terrain/reports/training-water-level-prior.json",
+      "name": "training-water-level-prior.json",
+      "bytes": 2426,
+      "sha256": "651e927eaf755fc12821cc41610a08000be87ed543d28db1e87f10bf9fe9331d"
+    }
+  ],
+  "full_training_plan_sha256": "53fcca98b551f23732c0376b90125cf29b4f6f57f360e32afbe9bd5938e742ca",
+  "capped_reproduction_audit_sha256": "2e63719cb78fd4bac536b2e39784c0d85e77e8f741d804f439acceeb10abee8d",
+  "scope": "Exact currently used inference source files from MTT, with syntax, CPU import and unchanged-source checks. No model weights, optimizer state, dependency binaries or Minecraft client/server included.",
+  "sampling": {
+    "shape": [
+      9,
+      512,
+      512
+    ],
+    "ddim_steps": 100,
+    "batch": 4,
+    "gpu_memory_fraction": 0.08,
+    "blending": "decode log depth before physical weighted overlap",
+    "halo_experiment_enabled": false
+  },
+  "weights_included": false,
+  "final_weights_pending": true,
+  "ready_for_final_delivery": false,
+  "runtime_imports_exercised": true,
+  "cpu_numpy_torch_bridge_checked": true,
+  "cli_only_column_verifier_help_checked": true,
+  "dependency_import_order": "Load system numpy1.25/torch before adding the vendor nbtlib directory, which also contains an incompatible numpy2 copy.",
+  "nbtlib_resolved_from": "/root/autodl-tmp/minecraft-terrain/vendor/nbtlib/__init__.py",
+  "limits": [
+    "CPU imports and the numpy/torch bridge were exercised; no model generation or GPU allocation was requested by this backup.",
+    "Requires compatible MTT torch/torch_musa plus numpy, scipy and nbtlib. This is not a self-contained software environment.",
+    "Final selected checkpoints and their artifact review must be bound after the full training schedules complete."
+  ]
+}

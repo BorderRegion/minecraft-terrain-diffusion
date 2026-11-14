@@ -1,77 +1,29 @@
 {
-  "at_unix": 1794033781.697585,
-  "name": "terrain-v3-retained30k-20261107",
-  "selection": "Retained reproducible baseline;no model has passed the requested final aesthetics acceptance.",
-  "model_stages": [
-    {
-      "name": "surface20k",
-      "step": 20000,
-      "weights_kind": "ema",
-      "source_sha256": "e08fb663a1027f5d4d6b1e85b4af5476091e1794b0b32e5d7e6eb20b2890eb35",
-      "inference_sha256": "96e4431deaef092e7cad92780f958f9c6a8c19618f1c70410690f46521bd6b0d",
-      "bytes": 370145717,
-      "parameters": 92529225,
-      "all_inference_tensors_bitwise_equal_to_original_selected_weights": true,
-      "strict_architecture_load_passed": true
-    },
-    {
-      "name": "coarse50k",
-      "step": 50000,
-      "weights_kind": "ema",
-      "source_sha256": "cb5aeaf4fdbc83668759b9fc1196975c5a34938b334ba2cb279571d7788628be",
-      "inference_sha256": "55c5cbdee0d3410951c3ca2b41e4b0d6ccc3f55477b7c78f592f46c246c3f74a",
-      "bytes": 392372043,
-      "parameters": 98073421,
-      "all_inference_tensors_bitwise_equal_to_original_selected_weights": true,
-      "strict_architecture_load_passed": true
-    },
-    {
-      "name": "fine30k",
-      "step": 30000,
-      "weights_kind": "ema",
-      "source_sha256": "54876a572f1f8f955d7cdc6dc7a08f481bf5532b3c91bb191cb74171bdf4bc13",
-      "inference_sha256": "c078d6bdaf8a32a8ea1b8de09a285ca1d0ad180b842140d6ae5287867bd5a1cb",
-      "bytes": 392816973,
-      "parameters": 98184896,
-      "all_inference_tensors_bitwise_equal_to_original_selected_weights": true,
-      "strict_architecture_load_passed": true
-    },
-    {
-      "name": "codec20k",
-      "step": 20000,
-      "weights_kind": "model",
-      "source_sha256": "55f0c6f632f61a2f69eedfd57c83b9ebdee78e2e8cb202346fc8f922d1d3dbda",
-      "inference_sha256": "d2163108718aa671ff1172c28db848d20a413f4f6560e970c2a286f692a89ad2",
-      "bytes": 59880544,
-      "parameters": 14961452,
-      "all_inference_tensors_bitwise_equal_to_original_selected_weights": true,
-      "strict_architecture_load_passed": true
-    }
-  ],
-  "original_training_worlds": 2175,
-  "physical_shape_yzx": [
-    384,
+  "name": "heightfield-expanded-v2-domain-v1",
+  "representation": "2.5D surface, ground and seven material channels",
+  "selected_steps": {
+    "global": 98000,
+    "local": 100000
+  },
+  "parameters": {
+    "global": 92528457,
+    "local": 92554377,
+    "total": 185082834
+  },
+  "weights_delivery": "GitHub Release heightfield-expanded-v2-20261103",
+  "shape": [
+    9,
     512,
     512
   ],
-  "native_chunks_per_world": 1024,
-  "original_sampler_backend": "MUSA float32",
-  "profiles": [
-    0,
-    1
+  "learned_caves": false,
+  "vegetation": "Deterministic export decoration, not learned",
+  "known_limits": [
+    "Local steep clefts and material fragments",
+    "Not every seed is scenic; seed 90173 is ocean",
+    "Only two 96x96 windows had measured native water update tests",
+    "No seamless unlimited generation",
+    "No validated 2 GB or quantized runtime"
   ],
-  "full_native_roundtrip_both_profiles_passed": true,
-  "both_profiles_visual_acceptance": false,
-  "known_problems": [
-    "Floating blocks",
-    "Fragmented vegetation",
-    "Incoherent mixed materials",
-    "Noisy cave rock allocation"
-  ],
-  "experimental35k_and_material70k_not_promoted": true,
-  "latest_training_step_is_not_a_quality_ranking": true,
-  "inference_training_data_required": false,
-  "training_resume_requires_original_datasets_and_runtime": true,
-  "CUDA_full_generation_and_cross_backend_bitwise_equality_not_verified": true,
-  "model_goal_complete": false
+  "source_delivery": "provenance/ORIGINAL_DELIVERY.json"
 }

@@ -1,0 +1,40 @@
+{
+  "format": "terrain-height-domain-runtime-adapter-v1",
+  "created_at_utc": "2026-11-03T07:34:50.981246+00:00",
+  "base_runtime": {
+    "directory": "runtime-20261102T044444Z",
+    "manifest": "runtime-manifest.json",
+    "manifest_sha256": "6d14b4f122614f346634a3ef019316ddeecd527b820af9078d121c05ac3ad017",
+    "all9_actual_MTT_sources_match_archive": true,
+    "all9_local_archive_files_verified": true,
+    "versions": {
+      "python": "3.10.12",
+      "torch": "2.11.0.post1",
+      "torch_musa": "2.11.0.post1+b431668",
+      "numpy": "1.25.0",
+      "scipy": "1.15.3",
+      "nbtlib": "2.0.4"
+    }
+  },
+  "files": {
+    "height-domain-review-plan.json": {
+      "bytes": 1215,
+      "sha256": "67b554f3e02165d4e976045b7d0e7135a1f85886e68e8c260461dc6d0a0a27e1"
+    },
+    "run_conditional_expanded_domain_review_v1.py": {
+      "bytes": 11781,
+      "sha256": "232431e40616d871053a3f8f2db1a5a8601b4f66b5852be7a65092b4eccd68a3"
+    }
+  },
+  "callable_projection": "from run_conditional_expanded_domain_review_v1 import project_height_domain; bounded_field,report=project_height_domain(physical_field)",
+  "policy": "G=clip(G,-64,319); S=max(clip(S,-64,319),G); material channels unchanged",
+  "actual_review_tag": "conditional2048-v2-domain-v1",
+  "sampling_repeated": false,
+  "scope": "Additional explicit Minecraft-height projection,applied to all four complete original final fields. First three unchanged; seed90173 has12 below-floor seabed columns changed by less than6blocks. Materials and raw wet masks unchanged.",
+  "limits": [
+    "The archived script also contains this fixed-run recovery coordinator. Its main() expects preserved MTT artifacts and external evaluation/Minecraft tools; the callable projection only needs compatible numpy/torch.",
+    "This adds a physical world-domain adapter,not a claim that the learned model itself obeys height bounds.",
+    "Final combined artifact/native-game/visual acceptance remains pending."
+  ],
+  "ready_for_final_delivery": false
+}

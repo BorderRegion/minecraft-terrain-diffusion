@@ -1,62 +1,82 @@
-# Minecraft Terrain Diffusion — historical source archive
+# Minecraft Terrain Diffusion — 高度场可用版
 
-> **发布更正：本仓库归档的是已知存在破碎问题的旧版源码，不是用户要求的“最佳可用模型”。当前没有在此发布经过确认的最佳部署版本或其权重，请勿把本仓库作为该版本部署。** 详见 [发布状态与核查结果](docs/RELEASE_STATUS.zh-CN.md)。
+当前默认版本是 **`heightfield-expanded-v2-domain-v1`**：早期以地表为主的 2.5D 高度场模型，包含全局地形与条件局部细节两个模型。它是本次确认要发布的地表版本。
 
-Minecraft 三维地形扩散实验的源码与效果证据归档。生成流程包含地表引导、全局粗地形、三维细节扩散和体素解码，目标输出为可进入的 Minecraft Java 世界。
+此前误放在仓库首页的破碎三维体素实验已移至 [`legacy/voxel-v3/`](legacy/voxel-v3/)，不参与本入口推理，也不是本次权重下载的内容。
 
-**当前状态：训练暂停；实验原型；尚无版本通过最终美观与物理验收。**
+![实际湖岸与森林画面](evidence/minecraft-client-conditional2048-v2-domain-v1-hydro-1001-aerial.png)
 
-## 本仓库归档的历史版本
+![实际山地画面](evidence/minecraft-client-conditional2048-v2-domain-v1-hydro-1007-shore.png)
 
-`terrain-v3-retained30k-20261107` 是有复现与选择记录的旧基线，已知生成结果存在破碎。它不应被当作用户要求的最佳可用发布。后续训练断点尚未证明完整世界效果更好，也不能直接据此替换成新最佳版本。
+这些是原正式交付中真实 Minecraft 客户端的 F2 截图，与交付清单 SHA-256 一致。完整证据共六张，见 [`evidence/`](evidence/)。不是本次 CPU 冒烟测试或量化后的画面。
 
-| 阶段 | 选择步数 | 参数量 | FP32 推理权重文件字节数 |
-| --- | ---: | ---: | ---: |
-| surface | 20,000 | 92,529,225 | 370,145,717 |
-| coarse | 50,000 | 98,073,421 | 392,372,043 |
-| fine | 30,000 | 98,184,896 | 392,816,973 |
-| codec | 20,000 | 14,961,452 | 59,880,544 |
+## 模型与能力
 
-合计 303,748,994 参数，推理权重约 1.22 GB（1.13 GiB）。具体来源和哈希见 [MODEL_CARD.json](MODEL_CARD.json)。
+| 阶段 | 选用 EMA 步数 | 参数量 |
+| --- | ---: | ---: |
+| 全局地形 | 98,000 | 92,528,457 |
+| 条件局部细节 | 100,000 | 92,554,377 |
+| 合计 | 两个训练计划均已完成 100,000 步 | 185,082,834 |
 
-固定输出区域为 512×512×384 格，共 1024 个原生区块。模型能表达地表起伏、地下洞穴、方块状态和生物群系，但存在悬浮块、碎散植被、材质混杂与洞穴岩石不自然的问题。局部截图不能代表整图质量。
+两份 FP32 推理权重合计约 **741 MB（约 706 MiB）**。它们由已保存的正式 `best.pt` 原始 EMA 张量恢复，没有量化。发布文件重新封装了 ZIP 容器并去掉训练状态和训练文件列表，因此文件 SHA 与历史导出文件不同；以本仓库的 [`WEIGHTS.json`](WEIGHTS.json) 为准。历史选择和验收见 [`provenance/ORIGINAL_DELIVERY.json`](provenance/ORIGINAL_DELIVERY.json)。
 
-![Profile 0 overview](evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-overview.png)
+模型输出一片 512×512 的连续地表，包含地面高度、水面高度和七类材质。局部采用 64×64 窗口、32 格步幅，在物理高度域中融合。导出结果是一个连续的 Sponge v2 `.schem`，可以通过兼容工具导入 Minecraft Java 1.20.1 世界。
 
-![Profile 0 cave](evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-cave1.png)
+森林、湖岸、山地和雪地是这条路线的展示能力；树木与草花是导出时的确定性装饰。**没有学习三维洞穴、悬垂或完整生物群系生成，也不支持已验证的无缝无限扩展。** 局部陡沟、细尖岩柱和材质碎片仍存在；并非每个种子都漂亮，已验收种子 `90173` 为海洋。
 
-全部 10 张截图在 [evidence/](evidence/)，来自原 MUSA 流水线的实际游戏 F2 画面，与原交付清单 SHA-256 一致。它们不是量化版本的结果。
+## 安装与下载
 
-## 仓库内容与使用边界
-
-- `source/`：21 个原始源码模块，逐文件与保留版交付清单核对一致。
-- `infer.py`：原交付版的可搬迁推理入口。
-- `MODEL_CARD.json`：模型选择、规模、验证范围和已知问题。
-- `docs/ORIGINAL_BUNDLE_GUIDE.zh-CN.txt`：原完整模型包说明；其中所说的包内资源不等于本 Git 仓库内容。
-- `provenance/MANIFEST.json`：原完整交付包清单，用于记录来源；不表示本仓库包含清单全部文件。
-- `tools/verify_source.py`：不依赖 PyTorch 的源码、截图完整性与 Python 语法检查。
-
-**本仓库没有发布模型权重、原始世界、训练数据、完整归一化与词汇元数据、导出模板，也没有公开权重下载地址。因此仅克隆本仓库不能生成完整世界。** 权重与训练断点继续单独保存；未来发布资源时应核对原始哈希并补齐依赖。
+建议使用独立 Python 环境。先安装适合设备的 PyTorch，再安装基础依赖：
 
 ```bash
 git clone https://github.com/BorderRegion/minecraft-terrain-diffusion.git
 cd minecraft-terrain-diffusion
-python3 tools/verify_source.py
-python3 infer.py --help
+python -m venv .venv
+# Linux/macOS: source .venv/bin/activate
+# Windows: .venv\Scripts\activate
+
+# 纯 CPU 环境可使用以下版本；CUDA/MUSA 请安装与驱动匹配的版本。
+python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements-base.txt
+python tools/verify_source.py
+python tools/download_weights.py
 ```
 
-使用完整模型包时，另需 `weights/`、`metadata/`、`template/` 和包根目录的 `MANIFEST.json` 等资源。按照原说明安装与设备匹配的 PyTorch，然后执行包内校验与前向检查。训练脚本包含原实验路径，继续训练需要恢复数据并适配路径，不能直接把它们当成另一台机器上的可用路径。
+权重放在 GitHub [Release](https://github.com/BorderRegion/minecraft-terrain-diffusion/releases/tag/heightfield-expanded-v2-20261103) 中，不塞进 Git 历史。下载工具逐个校验大小及 SHA-256，不需要访问原训练主机。也可手动将两份 `.pt` 和 `WEIGHTS.json` 下载至 `weights/`。
 
-## 资源与后续目标
+## 运行
 
-原交付推理入口保留至少 18 GiB 空闲 GPU 显存的门槛。后续用户改写的逐阶段加载、逐瓦片解码服务曾报告在 RTX 4060 8 GB 上完成生成，但该服务不在此源码快照中，峰值显存未记录，不能据此承诺本入口支持 8 GB。
+先做快速冒烟检查。它只生成一个 64×64 小块、各阶段采样两步，**用于验证权重、代码和导出链路，不能判断最终效果**：
 
-INT8/INT4、纯 CPU 低内存生成和 2 GB 峰值进程内存均为后续研发目标，尚无本模型的完整效果与内存实测。量化权重体积不等于运行内存；三维特征、中间场和卷积工作区也必须纳入预算。此处没有量化完成或实时运行的承诺。
+```bash
+python infer.py --device cpu --smoke --steps 2 --batch 1 --out outputs/smoke
+```
 
-当前只支持固定区域生成，尚未验收无缝、可接续的无限世界生成。世界导出回读成功也不代表流体、重力、生态和美观全部合格。
+完整 512×512 生成：
 
-## 数据来源与依赖
+```bash
+python infer.py --device cpu --seed 1001 --steps 100 --batch 4 --out outputs/seed1001
+# 有匹配的 CUDA 版 PyTorch 时：
+python infer.py --device cuda --seed 1007 --steps 100 --batch 4 --out outputs/seed1007
+# 原始 MTT/MUSA 后端：将 --device 改为 musa，并安装匹配的 torch_musa。
+```
 
-保留版训练池记录为 2175 个世界，训练与验证按种子划分。来源包含 Minecraft Java 1.20.1、Fabric、Terralith 2.5.4 与 Chunky。Minecraft 程序、模组、驱动和游戏资产不随仓库分发；使用相关软件需遵守各自条款。PyTorch 根据 CPU/CUDA/MUSA 环境另行安装，基础 Python 依赖见 `requirements-base.txt`。
+输出目录必须尚不存在。`status.json` 显示进度，完成后输出 `terrain_full.schem`、高度/材质数组和 `manifest.json`。schematic 的第零层对应 `manifest.json` 中 `full.min_y`，导入时须按该高度对齐；它不是可直接放进 saves 的完整 Anvil 存档。
 
-本仓库用于公开记录实验现状及来源。尚未指定额外的开源许可证；公开可见不应被理解为已授予任意再分发许可。
+原正式对比参数为 `steps=100, batch=4`。局部噪声使用 `seed + 1 + batch_start_index`，因此**改变 batch 会改变随机采样结果**。跨 CPU/CUDA/MUSA 的数值或像素完全一致没有得到验证。降低 batch 可以用于探索更小内存，但请保留默认参数作质量对照。
+
+默认 `--water hydro` 使用原始实验性全局静水投影；原截图采用这一流程。它根据训练水位先验及模型湿区种子调整水面，属于显式后处理，并非模型直接学会的水动力学。`--water raw` 可保留高度边界投影后的模型水面。地形本身不做新增平滑或悬浮块清理。
+
+## 验证范围与内存目标
+
+原 MUSA 交付完成四个完整 512×512 区域检查，以及种子 1001、1007 的实际游戏画面和局部水更新测试；具体范围和局限见原交付记录。原水稳定性测试覆盖两个 96×96 已加载窗口，不代表任意世界和任意时长均稳定。
+
+本次发布入口新增 CPU/CUDA/MUSA 设备选择、推理权重校验、按阶段释放模型和快速冒烟模式。原运行时的三个模块仅将强制 `torch_musa` 导入改为可选导入，原模型、采样器、物理域融合与导出算法保留。高度边界投影函数从原适配器原样提取。
+
+新的测试结果见 [`docs/VALIDATION.json`](docs/VALIDATION.json)。CPU 小块运行验证不等于重新完成整图或游戏验收，也不提供 CUDA 显存上限保证。**极端量化和完整生成峰值进程内存不超过 2 GB 仍是待验证目标，本发布没有宣称达成。** 训练保持暂停。
+
+## 依赖与许可
+
+原数据来源包含 Minecraft Java 1.20.1、Fabric、Terralith 与 Chunky。游戏程序、模组、驱动、训练数据和优化器状态不随本发布提供。相关软件各自的条款仍适用。
+
+本仓库尚未指定额外开源许可证。公开可见不代表授予任意再分发许可。

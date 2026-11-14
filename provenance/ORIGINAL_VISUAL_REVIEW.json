@@ -1,0 +1,297 @@
+{
+  "format": "terrain-complete-final-visual-review-v1",
+  "reviewed_at_utc": "2026-11-03T08:08:25.199414+00:00",
+  "reviewer": "Assistant direct inspection of actual image artifacts",
+  "tag": "conditional2048-v2-domain-v1",
+  "training_complete": true,
+  "training_steps_per_model": 100000,
+  "selected_checkpoint_steps": {
+    "global": 98000,
+    "local": 100000
+  },
+  "seeds": [
+    1001,
+    1007,
+    42026,
+    90173
+  ],
+  "complete_region_shape": [
+    9,
+    512,
+    512
+  ],
+  "game_seeds": [
+    1001,
+    1007
+  ],
+  "static_review": {
+    "report": "conditional2048-v2-domain-v1-pre-native-visual-review-v1.json",
+    "sha256": "5e4250f556cdb15bbffab9632f81610c60a0fbc58c010f6e6caccaf45a30ccbb",
+    "actual_images_reviewed_count": 12,
+    "cases": {
+      "1001": {
+        "actual_images_reviewed": [
+          {
+            "artifact": "conditional2048-v2-domain-v1-1001-raw-terrain-3d.png",
+            "sha256": "84f64527e849160a4f4cc586359d94e504e10d8b6d2637cae383aa97ea955c98",
+            "directly_opened_image": "conditional2048-v2-1001-raw-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-1001-hydro-terrain-3d.png",
+            "sha256": "d9bc838851951fda02f56f3e0ed50a96ceacc2907ae3245fb4822d994f2c765b",
+            "directly_opened_image": "conditional2048-v2-1001-hydro-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-1001-raw-nearest-training-shape.png",
+            "sha256": "53ae6e6731fd335d28a4ab54af5ec00cfc342308f18bb9d67a00802d1d275a77",
+            "directly_opened_image": "conditional2048-v2-1001-raw-nearest-training-shape.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          }
+        ],
+        "observations": [
+          "Coherent main mountain,lower hills,water channels and islands.",
+          "Scattered dirt/rock patches and a narrow dark cut on the main mountain slope remain closer-view checks."
+        ],
+        "domain_changed_columns": 0,
+        "maximum_height_change_blocks": 0.0,
+        "max_training_height_shape_correlation": 0.7123770117759705,
+        "max_heldout_height_shape_correlation": 0.641952633857727
+      },
+      "1007": {
+        "actual_images_reviewed": [
+          {
+            "artifact": "conditional2048-v2-domain-v1-1007-raw-terrain-3d.png",
+            "sha256": "7f0c760610476fcc4480d7803e09550cbe62f245c7fc23443150f35312d4be21",
+            "directly_opened_image": "conditional2048-v2-1007-raw-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-1007-hydro-terrain-3d.png",
+            "sha256": "a40dc3a11496c0b6ac5b509b89274c08fef3de0863f817c2ba684d1374972fd5",
+            "directly_opened_image": "conditional2048-v2-1007-hydro-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-1007-raw-nearest-training-shape.png",
+            "sha256": "a84c51b50f6511c9a9c20f8ce5532efc609af420fe6324ecbe928ea8565ed616",
+            "directly_opened_image": "conditional2048-v2-1007-raw-nearest-training-shape.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          }
+        ],
+        "observations": [
+          "Connected snow peaks,ridges and grassy lower slopes.",
+          "Steep narrow depressions and mixed dirt/rock/snow fragments remain visible; native views must check these."
+        ],
+        "domain_changed_columns": 0,
+        "maximum_height_change_blocks": 0.0,
+        "max_training_height_shape_correlation": 0.7006399631500244,
+        "max_heldout_height_shape_correlation": 0.7146962285041809
+      },
+      "42026": {
+        "actual_images_reviewed": [
+          {
+            "artifact": "conditional2048-v2-domain-v1-42026-raw-terrain-3d.png",
+            "sha256": "c33aef571f0af6fa049489e7f54edd81222c15612c8c8ebdfe4cffa84c430c57",
+            "directly_opened_image": "conditional2048-v2-42026-raw-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-42026-hydro-terrain-3d.png",
+            "sha256": "264a12ce130df40cd12c371e87741dd51a4762ef28ee6038a3f3f1082cb2429e",
+            "directly_opened_image": "conditional2048-v2-42026-hydro-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-42026-raw-nearest-training-shape.png",
+            "sha256": "f3c8cffd6bdcb7518d09b8ced643823adad8f62d91fba2fa2e30617737b0ea29",
+            "directly_opened_image": "conditional2048-v2-42026-raw-nearest-training-shape.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          }
+        ],
+        "observations": [
+          "Mostly ocean with a snowy coast and several grassy or rocky islands.",
+          "This is a sea/coast case rather than another large mountain interior."
+        ],
+        "domain_changed_columns": 0,
+        "maximum_height_change_blocks": 0.0,
+        "max_training_height_shape_correlation": 0.7736198306083679,
+        "max_heldout_height_shape_correlation": 0.7511956691741943
+      },
+      "90173": {
+        "actual_images_reviewed": [
+          {
+            "artifact": "conditional2048-v2-domain-v1-90173-raw-terrain-3d.png",
+            "sha256": "7c3b54e6e66fa289005bc2faf302bde70f714e6b12c6a563334c79722ae2ef41",
+            "directly_opened_image": "conditional2048-v2-domain-v1-90173-raw-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-90173-hydro-terrain-3d.png",
+            "sha256": "593e57a85ce74a84bf3e4a1a7c21d736ddf391f415fe510e5553b64ceac648dd",
+            "directly_opened_image": "conditional2048-v2-domain-v1-90173-hydro-terrain-3d.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          },
+          {
+            "artifact": "conditional2048-v2-domain-v1-90173-raw-nearest-training-shape.png",
+            "sha256": "b15c6c07ebc834a028b5c5069960c0754496ce51a6d50e1213738a455d7fa469",
+            "directly_opened_image": "conditional2048-v2-domain-v1-90173-raw-nearest-training-shape.png",
+            "matches_directly_opened_image_byte_for_byte": true
+          }
+        ],
+        "observations": [
+          "Raw water surface is uneven; static-water output is a nearly uniform ocean surface.",
+          "No above-water land is visible here. This is a valid full-ocean case,with little visible landscape detail; it is not a demonstration of attractive mountain scenery."
+        ],
+        "domain_changed_columns": 12,
+        "maximum_height_change_blocks": 5.886528015136719,
+        "max_training_height_shape_correlation": 0.7425272464752197,
+        "max_heldout_height_shape_correlation": 0.6776346564292908
+      }
+    }
+  },
+  "formal_native_images_actually_viewed": [
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-aerial.png",
+      "sha256": "fcc6ce75134411d92eb2d942e817dec021ec8cbc17a004a388f8321624f25556",
+      "seed": 1001,
+      "view": "aerial",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-metadata.json",
+      "metadata_sha256": "8b15731c545c26a299316585bf3cdb05df67d2f2eee7add745978963c6f9a169",
+      "source_schematic_sha256": "d1530186f784d27b22cce522d90bc6bfd0453e926609345ed19e9b011922162a",
+      "actually_viewed": true
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-shore.png",
+      "sha256": "15d996c2ba4ed98f41f929dbf864157da67b64b6cbd58db013ae759d707c9649",
+      "seed": 1001,
+      "view": "shore",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-metadata.json",
+      "metadata_sha256": "8b15731c545c26a299316585bf3cdb05df67d2f2eee7add745978963c6f9a169",
+      "source_schematic_sha256": "d1530186f784d27b22cce522d90bc6bfd0453e926609345ed19e9b011922162a",
+      "actually_viewed": true
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-aerial.png",
+      "sha256": "f82612599c226fcf32929058f0b47da31696a69b095d9e05b0fd73899ae4d8e7",
+      "seed": 1007,
+      "view": "aerial",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-metadata.json",
+      "metadata_sha256": "5f19e1463332af9b3726fdc596690e4ed06a81a3500b39bd24d887c8bef45214",
+      "source_schematic_sha256": "dc2e7a5c2244aecf8449c46926694f100efaa82520100f8eda05073ae02861d0",
+      "actually_viewed": true
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-shore.png",
+      "sha256": "46c067f8309cbcbad449f2cf7873a70b8fbd98975ab0a0c1e1cd9c85a8eee879",
+      "seed": 1007,
+      "view": "shore",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-metadata.json",
+      "metadata_sha256": "5f19e1463332af9b3726fdc596690e4ed06a81a3500b39bd24d887c8bef45214",
+      "source_schematic_sha256": "dc2e7a5c2244aecf8449c46926694f100efaa82520100f8eda05073ae02861d0",
+      "actually_viewed": true
+    }
+  ],
+  "focused_native_images_actually_viewed": [
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-focus1001-aerial.png",
+      "sha256": "bf6e4084cebd44a06b0394fcbdc3668dc2ec14706438b4ff8d828b23ea281d0e",
+      "actually_viewed": true,
+      "view": "aerial"
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-focus1001-shore.png",
+      "sha256": "b1d5030188a91f07e44033bd32a5c08583c4eb90006d37ab305c5b4a572d2f1f",
+      "actually_viewed": true,
+      "view": "shore"
+    }
+  ],
+  "total_terrain_and_native_image_views": 18,
+  "focused_review": {
+    "seed": 1001,
+    "zx": [
+      351,
+      320
+    ],
+    "camera_reference": "conditional2048-v2-domain-v1-focus1001-camera-v1.json",
+    "camera_reference_sha256": "731149f680577bd4e85d953bef0dabe8f850058cf4e888247bc8c6eef5b6bf2f",
+    "metadata": "minecraft-client-conditional2048-v2-domain-v1-focus1001-metadata.json",
+    "metadata_sha256": "e59bb6ceabc81e4a9d18a046c01c9e9d7588b2ed30bfee42b05f2b896ec183c6",
+    "source_terrain_modified_for_capture": false,
+    "observations": [
+      "Both closer views show a steep rock-walled cleft,with narrow floor and sharp local pillars.",
+      "This feature is present in the generated source field and remains a local roughness limitation. It was not hidden by the normal lake viewpoints or repaired by the world-height adapter.",
+      "These views target a dry point outside the original water-test window; no extra water-stability claim is inferred from them."
+    ]
+  },
+  "native_visual_observations": {
+    "1001": [
+      "Lake bays,an island,forest and stepped shore slopes form a coherent scene.",
+      "Small rock/gravel irregularities and local bare dirt/rock fragments remain.",
+      "The normal water views do not cover every part of the full region; the targeted extra views retain the sharp-cleft limitation."
+    ],
+    "1007": [
+      "Snow-covered ridges,rock bands,green lower slopes and spruce/oak vegetation form a coherent mountain valley scene.",
+      "Snow/rock/soil transitions still contain small fragments and abrupt local slopes.",
+      "Distant fog and the finite exported-world boundary limit the visible surrounding landscape."
+    ]
+  },
+  "aesthetic_acceptance": {
+    "accepted": true,
+    "basis": "The complete land-region previews and actual client views show visually coherent,varied lake/forest and snowy mountain landscapes suitable for the requested terrain-generation deliverable. Local roughness is disclosed rather than treated as universally polished output.",
+    "ocean_case": "Seed90173 remains a complete ocean sample with little above-water scenery. It is retained as a distribution/diversity case,not as a mountain beauty example.",
+    "improvement_over_every_earlier_checkpoint_established": false
+  },
+  "artifact_verification": {
+    "file": "conditional2048-v2-domain-v1-artifact-verification.json",
+    "sha256": "4caf463c9f1545f7ef93d005618e597196ae7ae208238459f91bc68391303c1a",
+    "status": "artifact_integrity_verified",
+    "cases_verified": 4,
+    "games_verified": 2,
+    "input_files_hashed": 73
+  },
+  "native_water_scope": {
+    "window_blocks": [
+      96,
+      96
+    ],
+    "loaded_chunks_each": 36,
+    "neighbor_updates_each": 128,
+    "1001": {
+      "water_blocks": 25266,
+      "post_update_ticks": 1225,
+      "added": 0,
+      "removed": 0,
+      "levels_changed": 0
+    },
+    "1007": {
+      "water_blocks": 43863,
+      "post_update_ticks": 1228,
+      "added": 0,
+      "removed": 0,
+      "levels_changed": 0
+    },
+    "independently_recomputed_from_saved_arrays": true,
+    "scope_limit": "Observed loaded water windows only; not every block of the whole world or arbitrary future updates."
+  },
+  "height_domain_adapter": {
+    "first3_regions_bitwise_unchanged": true,
+    "seed90173_changed_ground_columns": 12,
+    "maximum_change_blocks": 5.886528015136719,
+    "materials_and_surface_and_float_wet_mask_unchanged": true,
+    "original_failed_raw_output_preserved": true,
+    "sampling_repeated": false
+  },
+  "source_novelty_scope": "All45230 training and5662 held-out coarse contexts were compared under8 rotations/reflections; complete height-shape images were viewed. This establishes the reported height comparisons,not absence of every kind of memorization.",
+  "model_scope": "Learned2.5D surface/ground plus7 material classes,with explicit world-height/static-water adapters and deterministic export vegetation. Learned caves/overhangs and unlimited neighboring-world integration are outside this representation.",
+  "final_source_observation": {
+    "directory": "../minecraft-terrain-model-backup",
+    "file": "final-delivery-source-observation-20261103.json",
+    "sha256": "ef15338e0cc7811ddf38bd48378ae96fb1bf2178ce69960b17ff948b25e22bad"
+  },
+  "visual_review_performed": true,
+  "review_complete": true,
+  "accepted_for_final_delivery": true,
+  "ready_for_final_delivery": true
+}

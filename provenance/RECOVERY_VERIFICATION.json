@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "role": "global",
+      "source_checkpoint": "runs/global320_2047_v2/best.pt",
+      "sha256": "1157267e194983ee01ae98a005aea10d60be20d616ff142436fc3d794cdf05e6",
+      "full_source_sha256_recomputed_on_backup_host": true,
+      "historical_selection_hash_matches": true
+    },
+    {
+      "role": "local",
+      "source_checkpoint": "runs/local_conditional2048_v2/best.pt",
+      "sha256": "5363c43724789187a6cddd1b55b39d23d5fef3bb320b3820e4abedf9caf08c12",
+      "full_source_sha256_recomputed_on_backup_host": true,
+      "historical_selection_hash_matches": true
+    }
+  ],
+  "ema_storage_transfer": "ZIP storage records copied without tensor conversion; source CRC checked",
+  "remote_source_files_modified": false,
+  "original_inference_container_recreated": false
+}

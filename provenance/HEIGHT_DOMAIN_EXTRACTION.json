@@ -1,0 +1,7 @@
+{
+  "original_adapter_sha256": "232431e40616d871053a3f8f2db1a5a8601b4f66b5852be7a65092b4eccd68a3",
+  "function": "project_height_domain",
+  "extracted_function_ast_matches_original": true,
+  "deployed_module": "source/height_domain.py",
+  "deployed_module_sha256": "988c0b78cca6e341380dce6fbe3a6d423f9023e159d1abff61f3b215cb4152c4"
+}

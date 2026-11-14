@@ -1,0 +1,32 @@
+{
+  "weights": [
+    {
+      "role": "global",
+      "file": "global2047-v2-ema.pt",
+      "step": 98000,
+      "parameters": 92528457,
+      "bytes": 370139407,
+      "sha256": "fbdeb1a6d40030301d4be0ce9a9882e5e096968ee3d8c0c5ea28b1918006538b",
+      "recovered_from_formal_source_checkpoint": "global320_2047_v2/best.pt",
+      "storage_copy": "Exact uncompressed EMA storage records copied from source ZIP; ZIP CRC checked during read",
+      "archive_container_repacked": true,
+      "quantized": false,
+      "full_original_checkpoint_sha_verified_this_recovery": true,
+      "source_checkpoint_sha256": "1157267e194983ee01ae98a005aea10d60be20d616ff142436fc3d794cdf05e6"
+    },
+    {
+      "role": "local",
+      "file": "conditional2048-v2-ema.pt",
+      "step": 100000,
+      "parameters": 92554377,
+      "bytes": 370243185,
+      "sha256": "8543e2f14fca5ba121b07dc477591fb72ab4701a2e89297cce8f5ebfc934cb89",
+      "recovered_from_formal_source_checkpoint": "local_conditional2048_v2/best.pt",
+      "storage_copy": "Exact uncompressed EMA storage records copied from source ZIP; ZIP CRC checked during read",
+      "archive_container_repacked": true,
+      "quantized": false,
+      "full_original_checkpoint_sha_verified_this_recovery": true,
+      "source_checkpoint_sha256": "5363c43724789187a6cddd1b55b39d23d5fef3bb320b3820e4abedf9caf08c12"
+    }
+  ]
+}

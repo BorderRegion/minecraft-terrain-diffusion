@@ -1,3 +1,4 @@
-numpy
-nbtlib
-# Install PyTorch separately for your CPU/CUDA/MUSA environment.
+numpy>=1.25
+scipy>=1.11
+nbtlib==2.0.4
+# Install a PyTorch build for your CPU/CUDA/MUSA environment separately.

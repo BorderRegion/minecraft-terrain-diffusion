@@ -1,0 +1,256 @@
+{
+  "format": "terrain-expanded-v2-final-delivery-v1",
+  "created_at_utc": "2026-11-03T07:34:50.981374+00:00",
+  "weights": [
+    {
+      "role": "global",
+      "file": "global2047-v2-ema.pt",
+      "sha256": "25749df2bd2ca1bdb0823d5aa05d61fab0979d3c8dcad1ebce9d46d9a1e0b7cb",
+      "bytes": 370320775,
+      "individual_manifest": "global2047-v2-ema.pt.json",
+      "individual_manifest_sha256": "1ffb5ef22fdbbab4c5ed2696ef768de63108b8f5bb153bb33ee2f996297de1a4",
+      "source_checkpoint": "runs/global320_2047_v2/best.pt",
+      "source_checkpoint_sha256": "1157267e194983ee01ae98a005aea10d60be20d616ff142436fc3d794cdf05e6",
+      "selected_step": 98000,
+      "completed_training_steps": 100000,
+      "remote_cpu_ema_tensor_equality_verified": true,
+      "local_file_sha256_independently_recomputed": true
+    },
+    {
+      "role": "local",
+      "file": "conditional2048-v2-ema.pt",
+      "sha256": "71f72a470aa8183a5c85937b3627bceda23f493f46f8d056bb523804cb2d4ce3",
+      "bytes": 370414941,
+      "individual_manifest": "conditional2048-v2-ema.pt.json",
+      "individual_manifest_sha256": "7a27b771ff2297d12e49170af14c2021d1a26f9650833a298162f963e502da07",
+      "source_checkpoint": "runs/local_conditional2048_v2/best.pt",
+      "source_checkpoint_sha256": "5363c43724789187a6cddd1b55b39d23d5fef3bb320b3820e4abedf9caf08c12",
+      "selected_step": 100000,
+      "completed_training_steps": 100000,
+      "remote_cpu_ema_tensor_equality_verified": true,
+      "local_file_sha256_independently_recomputed": true
+    }
+  ],
+  "runtime": {
+    "directory": "runtime-20261102T044444Z",
+    "manifest": "runtime-manifest.json",
+    "manifest_sha256": "6d14b4f122614f346634a3ef019316ddeecd527b820af9078d121c05ac3ad017",
+    "all9_actual_MTT_sources_match_archive": true,
+    "all9_local_archive_files_verified": true,
+    "versions": {
+      "python": "3.10.12",
+      "torch": "2.11.0.post1",
+      "torch_musa": "2.11.0.post1+b431668",
+      "numpy": "1.25.0",
+      "scipy": "1.15.3",
+      "nbtlib": "2.0.4"
+    }
+  },
+  "source_hash_observation": {
+    "file": "final-expanded-v2-source-hashes-20261103.json",
+    "sha256": "b2a90c89b32f76bc8c967857dfc71807be7de629b822a4de66015a00262377ba"
+  },
+  "model_selection": {
+    "file": "conditional2048-v2-model-selection.json",
+    "sha256": "60a9872e10ea38ea09d35dc93fa1c0e505623f386a9901df30a05f254b19150c",
+    "directory": "../minecraft-terrain-previews-20261030"
+  },
+  "paired100000_checkpoint_audit": {
+    "file": "full-training-step100000-snapshot-verification-v2.json",
+    "sha256": "64bb52f2629d328d255ccddac7da550a27ca3ae4dd61b0a0725d0fba96d586f8",
+    "directory": "../minecraft-terrain-previews-20261030"
+  },
+  "full_training_plan_sha256": "53fcca98b551f23732c0376b90125cf29b4f6f57f360e32afbe9bd5938e742ca",
+  "sampling": {
+    "ddim_steps": 100,
+    "batch": 4,
+    "noise_seed_rule": "seed + 1 + batch_start_index",
+    "full_field_shape": [
+      9,
+      512,
+      512
+    ],
+    "halo_enabled": false,
+    "actual_final_review_gpu_memory_fraction": null,
+    "archived_runtime_example_gpu_memory_fraction": 0.08
+  },
+  "weights_pending": false,
+  "training_complete": true,
+  "inference_backup_source_binding_verified": true,
+  "final_delivery_complete": true,
+  "ready_for_final_delivery": true,
+  "pending": [],
+  "limits": [
+    "This binds inference-only CPU EMA files to the exact current MTT inference sources. It does not certify generated aesthetics or native game stability.",
+    "Complete optimizer and RNG recovery points remain on MTT; these local EMA files do not support exact optimizer resumption.",
+    "The runtime archive records compatible dependencies but does not contain dependency binaries or Minecraft client/server.",
+    "Load system numpy1.25/torch before adding vendor nbtlib to avoid its incompatible numpy2 copy."
+  ],
+  "supersedes": {
+    "file": "expanded-v2-inference-bundle-domain-pending-20261103.json",
+    "bytes": 4672,
+    "sha256": "2b24a1c4a27ee4cb32ab42014349f22aebbaa88e3c8ea386c097dbd8b4d2b8b0"
+  },
+  "final_review_tag": "conditional2048-v2-domain-v1",
+  "original_review_failure_preserved": true,
+  "height_domain_adapter": {
+    "directory": "runtime-height-domain-v1-20261103",
+    "manifest": "adapter-manifest.json",
+    "manifest_sha256": "8a0dbc6d76c21822c11c07b62a47ac056c2470b5eb83df30dca2490b9029d3f4",
+    "policy": "G=clip(G,-64,319); S=max(clip(S,-64,319),G); material channels unchanged"
+  },
+  "completed_at_utc": "2026-11-03T08:10:46.981556+00:00",
+  "requirements_audit": [
+    {
+      "requirement": "Only MTT used for remote computation",
+      "evidence": "Observed source host,shared SSH socket,MTT paths and retained process/source reports.",
+      "result": "verified"
+    },
+    {
+      "requirement": "Real Minecraft seed terrain dataset,with global cross-chunk contexts",
+      "evidence": "2048 exact scheduled local seeds,2047 global worlds,source audits,cache bindings and5900 verified off-host field/audit files.",
+      "result": "verified"
+    },
+    {
+      "requirement": "Large global and conditional local diffusion models trained fully",
+      "evidence": "Both original100000step schedules,full finite model/EMA/optimizer/RNG audit,200 closed validation observations and selected EMA checks.",
+      "result": "verified"
+    },
+    {
+      "requirement": "Novel complete terrain regions spanning chunks",
+      "evidence": "All four fixed512x512 regions,225-patch reconstruction,source height-shape comparisons and8 full specified-column export audits.",
+      "result": "verified"
+    },
+    {
+      "requirement": "Visually appealing terrain checked in the game",
+      "evidence": "12 complete-region/source images,4 formal real-client F2 views and2 focused diagnostic F2 views were inspected; coherent lake/forest and snow-mountain scenes accepted with disclosed local roughness.",
+      "result": "verified_with_disclosed_limits"
+    },
+    {
+      "requirement": "Two native game tests and screenshots delivered to local FTP",
+      "evidence": "Both source-bound imports,independently recomputed water arrays,128updates each,post-update1225/1228ticks and all4 formal screenshots.",
+      "result": "verified"
+    },
+    {
+      "requirement": "Data,selected weights and matching inference code backed up locally",
+      "evidence": "Fresh data inventory audit,full SHA and selected EMA verification,all9 base sources plusexplicit height-domain adapter,relative artifact links in this bundle.",
+      "result": "verified"
+    }
+  ],
+  "preview_directory": "../minecraft-terrain-previews-20261030",
+  "data_directory": "../minecraft-terrain-data-backup",
+  "visual_review": {
+    "file": "conditional2048-v2-domain-v1-visual-review.json",
+    "bytes": 14313,
+    "sha256": "f33268c3e5667c2dfc674b6c2e70cb5230bf7f8ad98efcfea43a8230803b30a5"
+  },
+  "artifact_verification": {
+    "file": "conditional2048-v2-domain-v1-artifact-verification.json",
+    "bytes": 44528,
+    "sha256": "4caf463c9f1545f7ef93d005618e597196ae7ae208238459f91bc68391303c1a"
+  },
+  "selected_ema_cpu_verification": {
+    "file": "selected-expanded-v2-inference-verification-v1.json",
+    "bytes": 2355,
+    "sha256": "d995bf259435eb6f3e1d8f096c79814332cc025cd0241532b2239d5c52147fb5"
+  },
+  "final_source_observation": {
+    "file": "final-delivery-source-observation-20261103.json",
+    "bytes": 5834,
+    "sha256": "ef15338e0cc7811ddf38bd48378ae96fb1bf2178ce69960b17ff948b25e22bad"
+  },
+  "data_backup_verification": {
+    "file": "final-data-backup-verification-20261103.json",
+    "bytes": 794,
+    "sha256": "1abb0ad9bb7d4615b6b06c9cded58981fc4ba066a4dd07fd7c49b574a5a431d8"
+  },
+  "frozen_data_index": {
+    "file": "final-verified-index-20261103.json",
+    "sha256": "d9aa6b30fdfe4a65111a36ec8b44570b8a0b521f831d5321dd04372963a22633"
+  },
+  "training_checkpoint_audit": {
+    "file": "full-training-step100000-snapshot-verification-v2.json",
+    "bytes": 3581,
+    "sha256": "64bb52f2629d328d255ccddac7da550a27ca3ae4dd61b0a0725d0fba96d586f8"
+  },
+  "completed_training_curve": {
+    "file": "training-completed-v2-20261103T070042Z-validation-history.json",
+    "bytes": 4461,
+    "sha256": "b58fce668a26c49f37a3b2cdb50c39f0e446669f05819e81fd6abe3110b10672"
+  },
+  "exact_data_ratios": {
+    "file": "conditional-expanded-v2-exact-ratios.json",
+    "bytes": 2166,
+    "sha256": "995749fdb6f26da3b73a51fa8ed4cd8cb855301e4b434656dfe5fe3dd10d71f6"
+  },
+  "formal_screenshots": [
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-aerial.png",
+      "sha256": "fcc6ce75134411d92eb2d942e817dec021ec8cbc17a004a388f8321624f25556",
+      "seed": 1001,
+      "view": "aerial",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-metadata.json",
+      "metadata_sha256": "8b15731c545c26a299316585bf3cdb05df67d2f2eee7add745978963c6f9a169",
+      "source_schematic_sha256": "d1530186f784d27b22cce522d90bc6bfd0453e926609345ed19e9b011922162a",
+      "actually_viewed": true
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-shore.png",
+      "sha256": "15d996c2ba4ed98f41f929dbf864157da67b64b6cbd58db013ae759d707c9649",
+      "seed": 1001,
+      "view": "shore",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1001-metadata.json",
+      "metadata_sha256": "8b15731c545c26a299316585bf3cdb05df67d2f2eee7add745978963c6f9a169",
+      "source_schematic_sha256": "d1530186f784d27b22cce522d90bc6bfd0453e926609345ed19e9b011922162a",
+      "actually_viewed": true
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-aerial.png",
+      "sha256": "f82612599c226fcf32929058f0b47da31696a69b095d9e05b0fd73899ae4d8e7",
+      "seed": 1007,
+      "view": "aerial",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-metadata.json",
+      "metadata_sha256": "5f19e1463332af9b3726fdc596690e4ed06a81a3500b39bd24d887c8bef45214",
+      "source_schematic_sha256": "dc2e7a5c2244aecf8449c46926694f100efaa82520100f8eda05073ae02861d0",
+      "actually_viewed": true
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-shore.png",
+      "sha256": "46c067f8309cbcbad449f2cf7873a70b8fbd98975ab0a0c1e1cd9c85a8eee879",
+      "seed": 1007,
+      "view": "shore",
+      "metadata": "minecraft-client-conditional2048-v2-domain-v1-hydro-1007-metadata.json",
+      "metadata_sha256": "5f19e1463332af9b3726fdc596690e4ed06a81a3500b39bd24d887c8bef45214",
+      "source_schematic_sha256": "dc2e7a5c2244aecf8449c46926694f100efaa82520100f8eda05073ae02861d0",
+      "actually_viewed": true
+    }
+  ],
+  "additional_focus_screenshots": [
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-focus1001-aerial.png",
+      "sha256": "bf6e4084cebd44a06b0394fcbdc3668dc2ec14706438b4ff8d828b23ea281d0e",
+      "actually_viewed": true,
+      "view": "aerial"
+    },
+    {
+      "file": "minecraft-client-conditional2048-v2-domain-v1-focus1001-shore.png",
+      "sha256": "b1d5030188a91f07e44033bd32a5c08583c4eb90006d37ab305c5b4a572d2f1f",
+      "actually_viewed": true,
+      "view": "shore"
+    }
+  ],
+  "height_domain_adapter_required_for_final_export": true,
+  "parameters": {
+    "global": 92528457,
+    "local": 92554377,
+    "total": 185082834
+  },
+  "scope_limits": [
+    "The learned representation is2.5D ground/surface plus7 materials; caves/overhangs are not learned and export vegetation is deterministic.",
+    "Local steep clefts,sharp rock pillars and material fragments remain; scenic quality is not uniform across every seed. Seed90173 is full ocean.",
+    "Native water stability was measured in two loaded96x96windows,not across an unlimited world or every future update.",
+    "Global source-coverage ratio is about0.32093coarse positions per parameter; local is about20.65096fine positions per parameter. These spatial units are not independent language tokens,and20x is not guaranteed compute-optimal for diffusion.",
+    "Raw3D Minecraft worlds and full optimizer/RNG checkpoints remain on MTT. Local files hold audited extracted fields and inference-only EMA weights.",
+    "The runtime archives record compatible dependencies but do not bundle dependency binaries or Minecraft client/server. Component manifests retain their historical capture-time pending flags; this completed delivery manifest is authoritative."
+  ]
+}

@@ -1,0 +1,3 @@
+numpy
+nbtlib
+# Install PyTorch separately for your CPU/CUDA/MUSA environment.
