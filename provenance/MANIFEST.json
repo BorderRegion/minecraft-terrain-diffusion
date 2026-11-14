@@ -1,0 +1,351 @@
+{
+  "files": [
+    {
+      "path": "ENVIRONMENT_TESTED.json",
+      "bytes": 134,
+      "sha256": "99aaf511ea3b8c6c459d418483ef804f2f26bc6cc204c6dfcf56ce4d7bc99d6b"
+    },
+    {
+      "path": "MODEL_CARD.json",
+      "bytes": 2830,
+      "sha256": "85d44b63066370a455f5e15aa610a6adc0e0afb874281114c5213e4fc5f1c7da"
+    },
+    {
+      "path": "README_使用说明.txt",
+      "bytes": 7434,
+      "sha256": "b120b9bfb0ca2ef66a5d9a96b7e3fef01df99af4e7336e7b4cac3028b90fe434"
+    },
+    {
+      "path": "evidence/full30k-final-native-F2-physics.json",
+      "bytes": 20607,
+      "sha256": "d744f23e44fa28f1938cc035c1bf5bc2d6d3c936d58e0bd877402f1c475998c8"
+    },
+    {
+      "path": "evidence/profile0/generation-manifest.json",
+      "bytes": 3714,
+      "sha256": "61eefe131674dad8ba8bceb9228b6b8cca5bab332f22445a23ce8a8ad1eeef3b"
+    },
+    {
+      "path": "evidence/profile0/metadata.json",
+      "bytes": 6508,
+      "sha256": "bdefeecdf5e0e0aaa4d1b91adf7a56d253297ace1c77bb443a561c1e9f405608"
+    },
+    {
+      "path": "evidence/profile0/native-audit.json",
+      "bytes": 2447,
+      "sha256": "632891e087404178a2d5fa7ec1f666424911d110542d7176985acaec6249f4d1"
+    },
+    {
+      "path": "evidence/profile0/plan.json",
+      "bytes": 6186,
+      "sha256": "2d821bb3d5f60e9573a3a62420a00dc81234212156535b0b308740ff34198d9a"
+    },
+    {
+      "path": "evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-cave1.png",
+      "bytes": 2110626,
+      "sha256": "f6687f9071c0afc7ba03231d2053a690ddea50082aebef135fcb2df22a0e38a0"
+    },
+    {
+      "path": "evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-cave2.png",
+      "bytes": 1979875,
+      "sha256": "9fa090c6d20f7b430566d270cca293f63601410332216269ffd766547d148cb1"
+    },
+    {
+      "path": "evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-overview.png",
+      "bytes": 2048845,
+      "sha256": "423842748ed2f902d9d39b91b96c62e5f7f9205bb6161c37c0d816a05f934a77"
+    },
+    {
+      "path": "evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-surface1.png",
+      "bytes": 1421805,
+      "sha256": "6da96169dda48411f3c17c97fab668fd0841605bc0d33523a3b6ad85244449a2"
+    },
+    {
+      "path": "evidence/profile0/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile0-v1-client-surface2.png",
+      "bytes": 2977798,
+      "sha256": "f34b80079dee51f6d559976f676d63f9159a1111e15aa42d01b8c7228f52ea6b"
+    },
+    {
+      "path": "evidence/profile1/generation-manifest.json",
+      "bytes": 3712,
+      "sha256": "1b4ae081a6aae81a114ad972bb2d42e96c615837a54d5890b79147a641931790"
+    },
+    {
+      "path": "evidence/profile1/manual-visual-review.json",
+      "bytes": 2261,
+      "sha256": "5821c80bbc8c9bdd4dc2735729475163f9e769c11ad2ac9a1d95fd4a90327de0"
+    },
+    {
+      "path": "evidence/profile1/metadata.json",
+      "bytes": 6500,
+      "sha256": "04d235e25763007ebc9262e3da535014da4dd6cc33a27031990af602072cbd18"
+    },
+    {
+      "path": "evidence/profile1/native-audit.json",
+      "bytes": 2447,
+      "sha256": "8daf6de4512d3168cd3a94ef20e62970c2a3dca7fdeaa78092795cbe541baa62"
+    },
+    {
+      "path": "evidence/profile1/plan.json",
+      "bytes": 6186,
+      "sha256": "7ed2175e576cf89565dea37d81d8176568edcec39335385940ecd0a2fec6c824"
+    },
+    {
+      "path": "evidence/profile1/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile1-v1-client-cave1.png",
+      "bytes": 2277544,
+      "sha256": "8968f01751a3cc68c42f0cc1e533c1fb582641812899d2935929f9f7eaa6084a"
+    },
+    {
+      "path": "evidence/profile1/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile1-v1-client-cave2.png",
+      "bytes": 2177351,
+      "sha256": "bc05d10ab9836928c0ef844476b12492a6b501c9438b798082659b0b1d6cfd74"
+    },
+    {
+      "path": "evidence/profile1/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile1-v1-client-overview.png",
+      "bytes": 1775351,
+      "sha256": "e63d30ddd3333a082fd2503ba665b77a1f659812d84ee935228f8d4f9abadd9b"
+    },
+    {
+      "path": "evidence/profile1/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile1-v1-client-surface1.png",
+      "bytes": 1684746,
+      "sha256": "e1d88ec1475996fcc275296eebfe593ddd9e98323520de405d15670ed07a9fe1"
+    },
+    {
+      "path": "evidence/profile1/voxel-v3-dense2175-novel-fine30000-coarse50000-202611050102-profile1-v1-client-surface2.png",
+      "bytes": 2952185,
+      "sha256": "6663932f9d4d840d70c37fc8e1341b619f875b23b1c42e8b6a47aac9798806ed"
+    },
+    {
+      "path": "evidence/selection-history/voxel-v3-dense2175-fine20k30k-fixed-contexts-v2/comparison.json",
+      "bytes": 356512,
+      "sha256": "3695aeb243c632220c50a18ec9fc466a487a32f2032b0d62fff623f7e76a6750"
+    },
+    {
+      "path": "evidence/selection-history/voxel-v3-dense2175-fine20k30k-fixed-contexts-v2/manual-review.json",
+      "bytes": 2381,
+      "sha256": "5a28c695c69236ca474c9d836da292422ba1a42fe19add1df513a5ce63d8a443"
+    },
+    {
+      "path": "evidence/selection-history/voxel-v3-terrain-diversity32-fine75000-v144/manual-visual-review.json",
+      "bytes": 2281,
+      "sha256": "3fee9051746f0ebb0a9393fcdffd227ad98480220173c10f844ad974444bed94"
+    },
+    {
+      "path": "evidence/selection-history/voxel-v3-terrain-diversity32-fine75000-v144/review.json",
+      "bytes": 1111108,
+      "sha256": "839a558475a9bbc5b0d865d94b2dd637e9532a03c1d7ab6a08ff8d54c3185489"
+    },
+    {
+      "path": "export-bitwise-verification.json",
+      "bytes": 2572,
+      "sha256": "9be9e97a0baf5a23d1de50fc0f9544d3b3a6237569b890dfa0015f3cefcf32f6"
+    },
+    {
+      "path": "infer.py",
+      "bytes": 9795,
+      "sha256": "70d4dd34d22f2651d1fe7e3edf78452c74591d686c52428179c569a833e2862a"
+    },
+    {
+      "path": "metadata/encoder-selection.json",
+      "bytes": 1335,
+      "sha256": "8560440e051a8a3dded86c45feaa9d22f157d8dcf58c99aab159b54c837e72d8"
+    },
+    {
+      "path": "metadata/normalization.json",
+      "bytes": 15438,
+      "sha256": "ad5c55183fd1c81cf4f246819a5800c0189696ced8038ec4188b81f2ffd16506"
+    },
+    {
+      "path": "metadata/original-training-pool.json",
+      "bytes": 146163752,
+      "sha256": "b6ac16b84d040dd0789e7d83f992853beb891c5bd38b422abfeb38d60563da71"
+    },
+    {
+      "path": "metadata/vocabulary.json",
+      "bytes": 191077,
+      "sha256": "44f8fe811a4bac7e3693ea51f73c8155eb56b916a9244e187b12e7171e631f7b"
+    },
+    {
+      "path": "requirements-base.txt",
+      "bytes": 82,
+      "sha256": "783b67f79ef1eabfbaa7ae22b1a45dc8b65f7c227d4e055b18300c3db6b91932"
+    },
+    {
+      "path": "source/audit_dataset.py",
+      "bytes": 2805,
+      "sha256": "4cfc12531bf22286caa9836f4f77bc6e7e838e743c0863d5234218edc0f2c3e9"
+    },
+    {
+      "path": "source/audit_dense.py",
+      "bytes": 1661,
+      "sha256": "415630d452295f433da2c7165d7769014ce524674afbd36d6353e9b25ed1cb93"
+    },
+    {
+      "path": "source/conditional_voxel_diffusion_v3.py",
+      "bytes": 5173,
+      "sha256": "8d113cda1a5cedcc8f00248574bcacc1412194912e210f21c658a267522c86db"
+    },
+    {
+      "path": "source/decode_fine_voxel_tiled_v3.py",
+      "bytes": 3986,
+      "sha256": "7f4090b8ad07c483aa7bfcffdd07ba53f656bf6b9448bdecfd691b28ea7572dd"
+    },
+    {
+      "path": "source/export_rich_voxel_world_v3_playback.py",
+      "bytes": 10608,
+      "sha256": "6d50618e425c6c30dc13e9efa1edc08cb5e08e6c4a200aeee9d00942675ebdd1"
+    },
+    {
+      "path": "source/fine_voxel_diffusion_training_v3.py",
+      "bytes": 1628,
+      "sha256": "9093779c984111c081e1e0fdbdb8fd390e00bdcd02e4e931f2a536fd3e2e74ac"
+    },
+    {
+      "path": "source/fine_voxel_latent_data_v3.py",
+      "bytes": 6572,
+      "sha256": "e53e0133c12b84f0feb54f323408c432a0eaf6b18040bd250c5fd035851e7d54"
+    },
+    {
+      "path": "source/global_voxel_diffusion_training_v3.py",
+      "bytes": 3146,
+      "sha256": "4b8620c651a44c91d515ef4de201b322387e438c3d7e564709c15e6a68d60b7c"
+    },
+    {
+      "path": "source/ground_extract.py",
+      "bytes": 3763,
+      "sha256": "4f4487782ac54879efa8a1797614a8d61813a9b2c083a6fbda0fd2cdd6059985"
+    },
+    {
+      "path": "source/project_coarse_density_cpu_v3.py",
+      "bytes": 1594,
+      "sha256": "f90459041bf06fc9f125f900291fb54a6a532040a24abd9e8d40b65f7d5c094f"
+    },
+    {
+      "path": "source/regional_voxel_sampling_v3.py",
+      "bytes": 5382,
+      "sha256": "b01bb9721f4bb50cbbd97ee4d634455a8f9f55fd686cb4ed182c83cb66f3b739"
+    },
+    {
+      "path": "source/rich_codec_factory_v3.py",
+      "bytes": 326,
+      "sha256": "c7725d1dfdca4bb4d0246a36ed5fa895b33a4f4916e64ad41ccf83d55377b931"
+    },
+    {
+      "path": "source/rich_voxel_autoencoder_v3.py",
+      "bytes": 4249,
+      "sha256": "7655fe06198b1a432b61c492af6defaecfc2494e995b0caa82d7187917ed065a"
+    },
+    {
+      "path": "source/rich_voxel_decode_v3.py",
+      "bytes": 5195,
+      "sha256": "09152673ed86a862bf114db419492981152f0b0efbd12de9794bb6d991cab284"
+    },
+    {
+      "path": "source/rich_voxel_detail_decoder_v3.py",
+      "bytes": 2199,
+      "sha256": "336e5c8a88d9a52ae74b3a0e3c4d15988dbca5229eb021df70982cc55fbd335e"
+    },
+    {
+      "path": "source/sample_fine_voxel_tiled_v3.py",
+      "bytes": 3129,
+      "sha256": "25d125c29f9e955ffeb3c6fc00c75f4a0f8d538d1e634f2675607088400234c8"
+    },
+    {
+      "path": "source/surface_guide_unet_v3.py",
+      "bytes": 1573,
+      "sha256": "ff8ef14ffe204929ace65b65ddf302bf899ce05d28fc5df839c96dfcd5470d7c"
+    },
+    {
+      "path": "source/train.py",
+      "bytes": 10967,
+      "sha256": "c2cc1eb7de065693b521bd65ac2d7dda2201ea3781aec4fed18e4fa234c45e33"
+    },
+    {
+      "path": "source/voxel_autoencoder_v3.py",
+      "bytes": 3644,
+      "sha256": "03a420b7b1e40986d6d0dda7dc569f519afcaaf1efbd3980c54511c6a40774e1"
+    },
+    {
+      "path": "source/voxel_terrain_v3.py",
+      "bytes": 9998,
+      "sha256": "bcbc98b3e22aba95839fac2fb707678c7985e557e56d0aacf9bc92f0936e840b"
+    },
+    {
+      "path": "source/voxel_training_data_v3.py",
+      "bytes": 5262,
+      "sha256": "db1eb4e81cc781d9df63494dffeaec2e691ae4ea246734380433d28753a4f551"
+    },
+    {
+      "path": "template/chunk.nbt",
+      "bytes": 44865,
+      "sha256": "1fdce461a516289e5454f00fdb5156fe90c62599c7fc398a67c21c955d6adc2d"
+    },
+    {
+      "path": "template/level.dat",
+      "bytes": 19402,
+      "sha256": "3d7fc1c3d9f90ab925d019ac08f4d2bb3fbe5b6b32c4e2f0c7d8cd76cb39b5e6"
+    },
+    {
+      "path": "training-checkpoints/coarse50k/checkpoint.pt",
+      "bytes": 1602754456,
+      "sha256": "cb5aeaf4fdbc83668759b9fc1196975c5a34938b334ba2cb279571d7788628be"
+    },
+    {
+      "path": "training-checkpoints/coarse50k/plan.json",
+      "bytes": 15808,
+      "sha256": "0a3fd18b3b4e2f09acb426a2178c5e68ed9f3736786634f78edc4f5a67f8a531"
+    },
+    {
+      "path": "training-checkpoints/codec20k/checkpoint.pt",
+      "bytes": 392381571,
+      "sha256": "55f0c6f632f61a2f69eedfd57c83b9ebdee78e2e8cb202346fc8f922d1d3dbda"
+    },
+    {
+      "path": "training-checkpoints/codec20k/plan.json",
+      "bytes": 4821,
+      "sha256": "96518c86a37d204fc69b926d9ef6c019d470b66e8bf6c59908a02e616503d465"
+    },
+    {
+      "path": "training-checkpoints/fine30k/checkpoint.pt",
+      "bytes": 1804940120,
+      "sha256": "54876a572f1f8f955d7cdc6dc7a08f481bf5532b3c91bb191cb74171bdf4bc13"
+    },
+    {
+      "path": "training-checkpoints/fine30k/plan.json",
+      "bytes": 2919,
+      "sha256": "4506e6df4bdf727cd8809654928020bab53893a5b2c1bb7a833f88dafe451610"
+    },
+    {
+      "path": "training-checkpoints/surface20k/checkpoint.pt",
+      "bytes": 1513838805,
+      "sha256": "e08fb663a1027f5d4d6b1e85b4af5476091e1794b0b32e5d7e6eb20b2890eb35"
+    },
+    {
+      "path": "training-checkpoints/surface20k/plan.json",
+      "bytes": 16036,
+      "sha256": "2cb01f1be1fb5dcef8e61050b06b8fc754dd553acee7e4b13e75e7800d0066ec"
+    },
+    {
+      "path": "weights/coarse50k.pt",
+      "bytes": 392372043,
+      "sha256": "55c5cbdee0d3410951c3ca2b41e4b0d6ccc3f55477b7c78f592f46c246c3f74a"
+    },
+    {
+      "path": "weights/codec20k.pt",
+      "bytes": 59880544,
+      "sha256": "d2163108718aa671ff1172c28db848d20a413f4f6560e970c2a286f692a89ad2"
+    },
+    {
+      "path": "weights/fine30k.pt",
+      "bytes": 392816973,
+      "sha256": "c078d6bdaf8a32a8ea1b8de09a285ca1d0ad180b842140d6ae5287867bd5a1cb"
+    },
+    {
+      "path": "weights/surface20k.pt",
+      "bytes": 370145717,
+      "sha256": "96e4431deaef092e7cad92780f958f9c6a8c19618f1c70410690f46521bd6b0d"
+    }
+  ],
+  "quality_accepted": false,
+  "model_goal_complete": false
+}

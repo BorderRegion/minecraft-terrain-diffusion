@@ -1,0 +1,60 @@
+Minecraft 地形模型：当前保留复现基线使用说明
+版本：terrain-v3-retained30k-20261107
+
+1. 这是什么版本
+本包选择表面引导20,000步、全局粗地形50,000步、细节30,000步、编解码器20,000步这一完整组合。细节生成器为98,184,896参数，原始训练池为2,175个分离TRAIN/VAL世界。实际参数数目和每个文件的来源哈希见MODEL_CARD.json及export-bitwise-verification.json。
+这不是“已经达到优秀画质”的承诺：没有版本通过用户要求的全部地形、美观、洞穴与物理验收。30k通过了与20k比较的24项固定小样本检查，因此被保留用于完整世界复现；两个512×512×384世界均通过1024区块的原生方块状态/生物群系回读，但真实画面仍有悬浮方块、碎散植被、材质混杂及洞穴岩石不自然等问题。
+75k、100k等数字更大的权重没有因此自动升级为首选。35k天空专项和70k材质专项亦未取得全面整图验收，本包不把它们标作最终最佳。evidence目录包含选择与失败证据，不能把模型可加载等同于画质合格。
+
+2. 文件内容
+weights/：四个CPU保存的推理检查点，只包含精确选择的EMA权重（若源检查点无EMA则使用model）、结构配置和来源元信息。
+training-checkpoints/：同一组合的原始完整检查点及原plan.json。保留源文件全部字节，包含源文件原有的优化器、随机状态等；是否具备精确恢复条件还取决于原训练程序及原始数据。
+source/：推理依赖的原始Python模块，保持字节不变；其中训练/数据审计函数只作为依赖源码，并不随本包启动训练。
+infer.py：本包新增的可搬迁推理入口。复用原模型、DDIM、共享场重叠融合、密度投影、四头解码及Anvil导出函数，避免依赖MTT原绝对路径。
+metadata/：词汇/方块状态/生物群系表、原归一化统计、选择记录、原训练池元数据；不包含原始2,175个世界训练数据。
+template/：导出所需的level.dat和一个原始模板区块。不是额外训练样本。
+evidence/：两套完整世界的10张真实F2截图、生成计划、原生回读与物理/人工检查记录。截图来自原MUSA流水线，不是本机新生成的画面。
+MANIFEST.json、SHA256SUMS：逐文件大小和SHA256清单。ENVIRONMENT_TESTED.json记录MTT实际软件版本。
+
+3. 解压及不依赖PyTorch的完整性检查
+在下载目录执行：
+  sha256sum -c terrain-v3-retained30k-20261107.tar.gz.sha256
+  tar -xzf terrain-v3-retained30k-20261107.tar.gz
+  cd terrain-v3-retained30k-20261107
+  sha256sum -c SHA256SUMS
+  python3 infer.py --verify-pack
+不要覆盖解压到已有的同名模型目录。保留原压缩包及校验文件。
+
+4. 运行环境
+建议使用与ENVIRONMENT_TESTED.json一致的Python及PyTorch环境。MTT原流水线在Linux、Python3.10、PyTorch+torch_musa上运行。普通CPU PyTorch可用于权重检查及小型前向检查；完整世界的CPU生成极慢。
+基础依赖安装：
+  python -m pip install -r requirements-base.txt
+PyTorch需要按实际硬件单独安装。MUSA还需与设备驱动匹配的torch_musa；CUDA需相应CUDA版PyTorch。包中没有GPU驱动或这些大型依赖，不会自动修改系统或启动训练。不要把CPU版PyTorch误认为可以使用MUSA/CUDA。
+目标FTP主机仅作为交付存储，没有要求在该主机运行训练。打包时已在MTT验证四个导出权重与源选择权重逐张量相等，并执行包内四个模型的CPU前向检查。新入口未重新生成一套完整512世界，CUDA整图与跨设备逐位相等尚未验证。
+
+5. 先验证模型，再生成
+安装PyTorch与基础依赖后：
+  python infer.py --check
+进一步执行四个模型的真实CPU小型前向并检查输出有限：
+  python infer.py --smoke
+这些检查可确认结构与权重加载，不代替完整世界的视觉评测。原始完整检查点可能包含Python训练状态；直接加载它们需使用可信文件和原训练代码。本包日常推理只读取weights/，使用weights_only=True。
+
+6. 生成完整世界
+完整输出固定为YZX=(384,512,512)，世界坐标起点XYZ=(-256,-64,-256)，共1024区块。需要至少18GiB空闲GPU显存、16GiB可用输出磁盘空间；建议主机提供32GiB以上可用内存。保持充足余量，原MTT生产流水线采用更保守的100GiB磁盘保留门槛。
+原MUSA配置复现参数：
+  python infer.py --device musa --seed 202611050102 --profile 0 --steps 100 --batch 8 --guidance 1 --out /有足够空间的目录/terrain-profile0
+另一个地形配置：
+  python infer.py --device musa --seed 202611050102 --profile 1 --steps 100 --batch 8 --guidance 1 --out /有足够空间的目录/terrain-profile1
+支持切换--device cuda或cpu。CUDA入口的设备选择已写入，但本包不声称CUDA完整世界已验收。CPU全图还须显式增加--allow-slow-cpu。CPU线程数可用--cpu-threads指定。
+首次复现请保持steps=100、batch=8、guidance=1以及cache_tiles=1。不要先降低采样步数判断最终画质。程序按三个阶段派生确定性种子，并对全区域共享细节噪声；不会把独立生成的小块简单拼接成世界。新的seed可以生成新场，但不意味着此前完整世界证据覆盖新seed。
+输出目录必须尚不存在，父目录必须已存在。进程会输出日志并更新输出目录/status.json；失败会保留部分输出，不自动重新训练或重启。整图很慢，尤其细节采样和解码；应核实进程及status再判断是否停止。
+
+7. 在Minecraft中查看
+生成完成后，输出目录/world/是Anvil世界，输出目录还保留原始归一化/物理潜变量、语义、方块状态、生物群系和投影记录。
+使用Minecraft Java 1.20.1；已验证的隔离回放环境为Fabric+Fabric API+Terralith2.5.4。自定义生物群系依赖相应模组/注册表。此说明不是让你把Tectonic/Lithostitched的地形生成覆盖叠加到回放世界：原导出专门使用有界区域之外的虚空生成策略，以免天然新生地形干扰模型区域。模组文件及Minecraft服务端本体不包含在本包。
+将生成world复制为独立存档后再打开，不要覆盖已有世界。原生游戏会重新计算高度与光照；启用流体和方块更新后画面可能变化，因此首次看到画面不代表动态物理已通过。部分世界区域之外为虚空，是有界512世界的设计范围。
+截图示例位于evidence/profile0与profile1。它们记录的是30k基线的实际效果，包含已知缺陷。这里未附带现成的两套完整游戏存档；生成新世界需执行上述推理流程。
+
+8. 后续继续训练
+training-checkpoints保留原始文件，权重不是本包重新量化或改变精度的版本。精确恢复仍须原始数据集、源目录布局、训练代码和与之匹配的环境；原池JSON中的绝对路径是来源记录，不能在另一台主机直接当作可用数据路径。本包的infer.py仅用于推理，不会读取这些不存在的训练路径。
+继续改进应比较同一输入、同一更新次数、两套地形配置及洞穴/地表的实际生成，并最终检查完整512世界、原生回读、真实F2和动态物理。当前主要缺陷未解决前，不应仅因步数变大、损失变低或缓存加速就宣布质量提升。

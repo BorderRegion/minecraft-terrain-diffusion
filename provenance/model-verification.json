@@ -1,0 +1,89 @@
+{
+  "at_unix": 1794033813.235606,
+  "original_four_checkpoint_exports_bitwise_verified": true,
+  "all_four_packaged_models_actual_CPU_forward_finite": true,
+  "smoke": [
+    {
+      "all_packaged_files_verified": 69,
+      "quality_accepted": false
+    },
+    {
+      "name": "surface20k",
+      "strict_state_load": true,
+      "parameters": 92529225,
+      "actual_CPU_forward_finite": true,
+      "output_shapes": [
+        1,
+        9,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "coarse50k",
+      "strict_state_load": true,
+      "parameters": 98073421,
+      "actual_CPU_forward_finite": true,
+      "output_shapes": [
+        1,
+        13,
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "fine30k",
+      "strict_state_load": true,
+      "parameters": 98184896,
+      "actual_CPU_forward_finite": true,
+      "output_shapes": [
+        1,
+        32,
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "codec20k",
+      "strict_state_load": true,
+      "parameters": 14961452,
+      "actual_CPU_forward_finite": true,
+      "output_shapes": {
+        "semantic": [
+          1,
+          22,
+          64,
+          64,
+          64
+        ],
+        "names": [
+          1,
+          231,
+          64,
+          64,
+          64
+        ],
+        "properties": [
+          1,
+          155,
+          64,
+          64,
+          64
+        ],
+        "biomes": [
+          1,
+          148,
+          16,
+          16,
+          16
+        ]
+      }
+    }
+  ],
+  "additional_GPU_calls": 0,
+  "new_entrypoint_full512_generation_not_rerun": true,
+  "original_MUSA_full512_evidence_in_package": true,
+  "model_goal_complete": false
+}

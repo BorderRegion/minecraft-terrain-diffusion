@@ -1,0 +1,110 @@
+{
+  "files": [
+    {
+      "path": "source/audit_dataset.py",
+      "bytes": 2805,
+      "sha256": "4cfc12531bf22286caa9836f4f77bc6e7e838e743c0863d5234218edc0f2c3e9"
+    },
+    {
+      "path": "source/audit_dense.py",
+      "bytes": 1661,
+      "sha256": "415630d452295f433da2c7165d7769014ce524674afbd36d6353e9b25ed1cb93"
+    },
+    {
+      "path": "source/conditional_voxel_diffusion_v3.py",
+      "bytes": 5173,
+      "sha256": "8d113cda1a5cedcc8f00248574bcacc1412194912e210f21c658a267522c86db"
+    },
+    {
+      "path": "source/decode_fine_voxel_tiled_v3.py",
+      "bytes": 3986,
+      "sha256": "7f4090b8ad07c483aa7bfcffdd07ba53f656bf6b9448bdecfd691b28ea7572dd"
+    },
+    {
+      "path": "source/export_rich_voxel_world_v3_playback.py",
+      "bytes": 10608,
+      "sha256": "6d50618e425c6c30dc13e9efa1edc08cb5e08e6c4a200aeee9d00942675ebdd1"
+    },
+    {
+      "path": "source/fine_voxel_diffusion_training_v3.py",
+      "bytes": 1628,
+      "sha256": "9093779c984111c081e1e0fdbdb8fd390e00bdcd02e4e931f2a536fd3e2e74ac"
+    },
+    {
+      "path": "source/fine_voxel_latent_data_v3.py",
+      "bytes": 6572,
+      "sha256": "e53e0133c12b84f0feb54f323408c432a0eaf6b18040bd250c5fd035851e7d54"
+    },
+    {
+      "path": "source/global_voxel_diffusion_training_v3.py",
+      "bytes": 3146,
+      "sha256": "4b8620c651a44c91d515ef4de201b322387e438c3d7e564709c15e6a68d60b7c"
+    },
+    {
+      "path": "source/ground_extract.py",
+      "bytes": 3763,
+      "sha256": "4f4487782ac54879efa8a1797614a8d61813a9b2c083a6fbda0fd2cdd6059985"
+    },
+    {
+      "path": "source/project_coarse_density_cpu_v3.py",
+      "bytes": 1594,
+      "sha256": "f90459041bf06fc9f125f900291fb54a6a532040a24abd9e8d40b65f7d5c094f"
+    },
+    {
+      "path": "source/regional_voxel_sampling_v3.py",
+      "bytes": 5382,
+      "sha256": "b01bb9721f4bb50cbbd97ee4d634455a8f9f55fd686cb4ed182c83cb66f3b739"
+    },
+    {
+      "path": "source/rich_codec_factory_v3.py",
+      "bytes": 326,
+      "sha256": "c7725d1dfdca4bb4d0246a36ed5fa895b33a4f4916e64ad41ccf83d55377b931"
+    },
+    {
+      "path": "source/rich_voxel_autoencoder_v3.py",
+      "bytes": 4249,
+      "sha256": "7655fe06198b1a432b61c492af6defaecfc2494e995b0caa82d7187917ed065a"
+    },
+    {
+      "path": "source/rich_voxel_decode_v3.py",
+      "bytes": 5195,
+      "sha256": "09152673ed86a862bf114db419492981152f0b0efbd12de9794bb6d991cab284"
+    },
+    {
+      "path": "source/rich_voxel_detail_decoder_v3.py",
+      "bytes": 2199,
+      "sha256": "336e5c8a88d9a52ae74b3a0e3c4d15988dbca5229eb021df70982cc55fbd335e"
+    },
+    {
+      "path": "source/sample_fine_voxel_tiled_v3.py",
+      "bytes": 3129,
+      "sha256": "25d125c29f9e955ffeb3c6fc00c75f4a0f8d538d1e634f2675607088400234c8"
+    },
+    {
+      "path": "source/surface_guide_unet_v3.py",
+      "bytes": 1573,
+      "sha256": "ff8ef14ffe204929ace65b65ddf302bf899ce05d28fc5df839c96dfcd5470d7c"
+    },
+    {
+      "path": "source/train.py",
+      "bytes": 10967,
+      "sha256": "c2cc1eb7de065693b521bd65ac2d7dda2201ea3781aec4fed18e4fa234c45e33"
+    },
+    {
+      "path": "source/voxel_autoencoder_v3.py",
+      "bytes": 3644,
+      "sha256": "03a420b7b1e40986d6d0dda7dc569f519afcaaf1efbd3980c54511c6a40774e1"
+    },
+    {
+      "path": "source/voxel_terrain_v3.py",
+      "bytes": 9998,
+      "sha256": "bcbc98b3e22aba95839fac2fb707678c7985e557e56d0aacf9bc92f0936e840b"
+    },
+    {
+      "path": "source/voxel_training_data_v3.py",
+      "bytes": 5262,
+      "sha256": "db1eb4e81cc781d9df63494dffeaec2e691ae4ea246734380433d28753a4f551"
+    }
+  ],
+  "source_matches_retained_release": true
+}
